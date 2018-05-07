@@ -1,0 +1,40 @@
+<div ng-init="UC.show()">
+    <h1>User partial template</h1>
+    <p>{{UC.user.id}}</p>
+
+    <p>
+        <editable-value value="UC.user.name" on-update="UC.update('name', value)"></editable-value>
+    </p>
+    <p>
+        <editable-value value="UC.user.username" on-update="UC.update('username', value)"></editable-value>
+    </p>
+
+    <p>{{UC.user.username}}
+        <!-- edit -->
+
+    </p>
+    <p>{{UC.user.email}}</p>
+    <p>{{UC.user.address.street}}</p>
+    <p>{{UC.user.address.suite}}</p>
+    <p>{{UC.user.address.city}}</p>
+    <p>{{UC.user.address.zip}}</p>
+    <p>{{UC.user.address.geo.lat}}</p>
+    <p>{{UC.user.address.geo.lon}}</p>
+    <p>{{UC.user.phone}}</p>
+    <p>{{UC.user.website}}</p>
+    <p>{{UC.user.company.name}}</p>
+    <p>{{UC.user.company.catchPhrase}}</p>
+    <p>{{UC.user.company.bs}}</p>
+    <h2>posts</h2>
+    <div ng-controller="PostsController as PC">
+        <div ng-init="PC.showUsers()">
+            <div ng-repeat="post in PC.posts">
+                <a href="#!/posts/{{post.id}}">
+                    <p>{{post.title}}</p>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</div>

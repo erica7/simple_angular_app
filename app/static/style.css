@@ -1,0 +1,24 @@
+.post {
+    background-color: #eee;
+    margin: 2em auto;
+    padding: 1em 2em;
+    max-width: 36em;
+    /* border-bottom: solid black 1px; */
+    border-radius: 1em;
+}
+
+.body {
+    margin: 1em;
+    margin-left: 3em;
+}
+
+
+a, a:link, a:visited, a:active {
+    color: #0894bb;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #08c9ff;
+    text-decoration: none;
+}
