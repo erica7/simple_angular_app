@@ -19,4 +19,4 @@ angular.module('app').controller('CommentsController', function (commentFactory,
     }
 });
 
-//TODO use 'posts/:id/comments' instead 
+//TODO consider using 'posts/:id/comments' instead 

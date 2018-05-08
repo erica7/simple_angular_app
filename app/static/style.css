@@ -2,6 +2,10 @@
     word-break: break-word;
 }
 
+body {
+    margin: 2em auto;
+}
+
 .post {
     background-color: #ddd;
     margin: 2em auto;
@@ -36,12 +40,15 @@
 }
 
 .home {
-    margin-top: 1em;
     text-align: center;
 }
 
 .user-info {
     margin: 1em auto;
+}
+
+.like-button {
+    margin-top: 1em;
 }
 
 /* editable-value {
@@ -68,5 +75,5 @@ input[type="text"] {
     border-radius: 0.2em;
     padding-left: 0.3em;
     border: none;
-    width: 70%;
+    max-width: 100%;
 }

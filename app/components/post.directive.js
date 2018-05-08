@@ -20,7 +20,4 @@ function postComponentController() {
         console.log("liked?: " + ctrl.data.liked)
         ctrl.onUpdate({id: ctrl.data.id, liked: !ctrl.data.liked})
     }
-    ctrl.$onInit = function() {
-        console.log("init post id: " + ctrl.data.id)
-    }
 }
