@@ -1,26 +1,7 @@
 <div ng-controller="CommentsController as CC">
     <div ng-controller="UsersController as UC" ng-init="PC.show(); CC.showPosts(); UC.index()">
-
-        post partial
-
-        <h4>title: {{ PC.post.title }}</h4>
-        <p>body: {{ PC.post.body }}</p>
-        <a href="#!/users/{{ PC.post.userId }}">
-            <p>username: {{ UC.filterUserName(PC.post.userId)[0].name }}</p>
-        </a>
-        <p>status (liked): ??
-        </p>
-
-
-        <h2>comments </h2>
-
-        <div ng-repeat="comment in CC.comments">
-            <h4>{{comment.name}}</h4>
-            <p>{{comment.email}}</p>
-            <p>{{comment.body}}</p>
-        </div>
-
-
+        <home-button></home-button>
+        <post data="PC.post" get-name="UC.getName(PC.post.userId)" full-post="true"></post>
+        <comment data="comment" ng-repeat="comment in CC.comments"></comment>
     </div>
-
 </div>

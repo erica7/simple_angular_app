@@ -1,6 +1,6 @@
-<span ng-switch="$ctrl.editMode">
-    <input ng-switch-when="true" ng-model="$ctrl.value" />
-    <span ng-switch-default>{{ $ctrl.value }}</span>
+<span ng-switch="EVC.editMode">
+    <input ng-switch-when="true" ng-model="EVC.value" />
+    <span ng-switch-default>{{ EVC.value }}</span>
 </span>
 
-<button class="btn {{ $ctrl.editMode ? 'btn-danger' : 'btn-primary' }}" ng-click="$ctrl.handleModeChange()">{{ $ctrl.editMode ? 'Save' : 'Edit' }}</button>
+<button class="btn {{ EVC.editMode ? 'btn-warning' : 'btn-primary' }}" ng-click="EVC.handleModeChange()">{{ EVC.editMode ? 'Save' : 'Edit' }}</button>

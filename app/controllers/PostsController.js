@@ -1,11 +1,8 @@
-// angular.module('app')
-
-app.controller('PostsController', function (postFactory, $routeParams) {
-    console.log('CS PostsController initialized!');
+angular.module('app').controller('PostsController', function (postFactory, $routeParams) {
     var self = this;
-    self.posts = [];
-    self.post = {};
     self.errors = [];
+    self.post = {};
+    self.posts = [];
     self.index = function () {
         postFactory.index(function (res) {
             self.posts = res.data;

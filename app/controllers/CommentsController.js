@@ -1,7 +1,6 @@
-app.controller('CommentsController', function (commentFactory, $routeParams) {
+angular.module('app').controller('CommentsController', function (commentFactory, $routeParams) {
     var self = this;
     self.comments = [];
-
     self.showPosts = function () {
         commentFactory.showPosts($routeParams.id, function (res) {
             if (res.data.errors) {
@@ -16,8 +15,6 @@ app.controller('CommentsController', function (commentFactory, $routeParams) {
             }
         })
     }
-
-
 });
 
 //TODO use 'posts/:id/comments' instead 

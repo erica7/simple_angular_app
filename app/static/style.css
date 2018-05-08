@@ -1,3 +1,7 @@
+* {
+    word-break: break-word;
+}
+
 .post {
     background-color: #eee;
     margin: 2em auto;
@@ -7,11 +11,38 @@
     border-radius: 1em;
 }
 
+.comment {
+    background-color: #F8F8F8;
+    margin: 2em auto;
+    padding: 1em 2em;
+    max-width: 33em;
+    /* border-bottom: solid black 1px; */
+    border-radius: 1em;
+}
+
+.user {
+    background-color: #E8E8E8;
+    margin: 2em auto;
+    padding: 1em 2em;
+    max-width: 39em;
+    /* border-bottom: solid black 1px; */
+    border-radius: 1em;
+}
+
 .body {
     margin: 1em;
     margin-left: 3em;
+    margin-right: 2em;
 }
 
+.home {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.user-info {
+    margin: 1em auto;
+}
 
 a, a:link, a:visited, a:active {
     color: #0894bb;

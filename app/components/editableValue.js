@@ -3,8 +3,7 @@ function EditableValueController() {
     ctrl.editMode = false;
     ctrl.handleModeChange = function () {
         if (ctrl.editMode) {
-            console.log("should run onUpdate next...")
-            ctrl.onUpdate({value: ctrl.value});
+            ctrl.onUpdate({ value: ctrl.value });
             ctrl.valueCopy = ctrl.value;
         }
         ctrl.editMode = !ctrl.editMode;
@@ -14,9 +13,10 @@ function EditableValueController() {
     }
 }
 
-app.component('editableValue', {
+angular.module('app').component('editableValue', {
     templateUrl: '/components/editableValue.html',
     controller: EditableValueController,
+    controllerAs: 'EVC',
     bindings: {
         value: "<",
         onUpdate: "&"

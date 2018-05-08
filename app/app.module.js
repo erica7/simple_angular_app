@@ -1,15 +1,12 @@
 'use strict';
 
-var app = angular.module('app', ['ngRoute']);
-
-app.config(['$routeProvider',
-    function($routeProvider) {
-
+angular.module('app', ['ngRoute']).config(['$routeProvider',
+    function ($routeProvider) {
         $routeProvider.
             when('/', {
                 templateUrl: '/partials/index.html',
                 controller: 'PostsController as PC'
-            }). 
+            }).
             when('/users/:id', {
                 templateUrl: '/partials/user.html',
                 controller: 'UsersController as UC'
@@ -18,6 +15,6 @@ app.config(['$routeProvider',
                 templateUrl: '/partials/post.html',
                 controller: 'PostsController as PC'
             }).
-            otherwise({redirectTo: '/'})
+            otherwise({ redirectTo: '/' })
     }
 ]);

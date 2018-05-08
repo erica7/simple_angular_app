@@ -1,0 +1,47 @@
+<div class="user">
+
+    <div class="name text-center">
+        <h1>
+            <editable-value value="UCC.data.name" on-update="UCC.update('name', value)"></editable-value>
+        </h1>
+    </div>
+    <div class="name text-center">
+        <h3>
+            <editable-value value="UCC.data.username" on-update="UCC.update('username', value)"></editable-value>
+        </h3>
+    </div>
+
+    <div class="row user-info">
+        <div class="col col-4 text-right">
+            Contact
+        </div>
+        <div class="col col-8 contact">
+            <div>{{UCC.data.email}}</div>
+            <div>{{UCC.data.phone}}</div>
+            <div>{{UCC.data.website}}</div>
+        </div>
+    </div>
+    <div class="row user-info">
+        <div class="col col-4 text-right">
+            Address
+        </div>
+        <div class="col col-8 address">
+            <div>{{UCC.data.address.street}}, {{UCC.data.address.suite}}</div>
+            <div>{{UCC.data.address.city}}, {{UCC.data.address.zip}}</div>
+            <div>{{UCC.data.address.geo.lat}}, {{UCC.data.address.geo.lng}}</div>
+        </div>
+    </div>
+    <div class="row user-info">
+        <div class="col col-4 text-right">
+            Company
+        </div>
+        <div class="col col-8 company">
+            <div>
+                <b>{{UCC.data.company.name}}</b>
+            </div>
+            <div>{{UCC.data.company.catchPhrase}}</div>
+            <div>{{UCC.data.company.bs}}</div>
+        </div>
+    </div>
+
+</div>

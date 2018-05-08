@@ -1,12 +1,9 @@
-app.controller('UsersController', function (userFactory, $routeParams) {
+angular.module('app').controller('UsersController', function (userFactory, $routeParams) {
     var self = this;
-
-    self.users = [];
-    self.user = {};
-    self.posts = [];
-
     self.errors = [];
-
+    self.posts = [];
+    self.user = {};
+    self.users = [];
     self.index = function () {
         userFactory.index(function (res) {
             if (res.data.errors) {
@@ -33,7 +30,29 @@ app.controller('UsersController', function (userFactory, $routeParams) {
             }
         })
     }
-    self.filterUserName = function (userId) {
+    // self.filterUserName = function (userId) {
+    //     console.log("filterUserName")
+    //     return self.users.filter(function (user) { return user.id === userId });
+    // }
+    self.getNameViaApi = function(userId) {
+        userFactory.getNameViaApi(userId, function(res) {
+            if (res.data.errors) {
+                for (key in res.data.errors) {
+                    var error = res.data.errors[key];
+                    console.log(error)
+                    self.errors.push(error);
+                    return;
+                }
+            } else {
+                self.user = res.data;
+                var arr = [self.user]
+                return arr;
+            }
+        })
+    }
+    self.getName = function(userId) {
+        console.log("getName")
+        // console.log(self.users)
         return self.users.filter(function (user) { return user.id === userId });
     }
     self.update = function(field, value) {
