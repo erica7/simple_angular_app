@@ -1,0 +1,10 @@
+<div ng-init="UC.show()">
+    <home-button></home-button>
+    <user data="UC.user" on-update="UC.update(field, value)"></user>
+    <div ng-controller="PostsController as PC" ng-init="PC.showUsers()">
+        <h5 ng-if="PC.posts" class="text-center">
+            <em>posts</em>
+        </h5>
+        <post data="post" ng-repeat="post in PC.posts" full-post="false"></post>
+    </div>
+</div>

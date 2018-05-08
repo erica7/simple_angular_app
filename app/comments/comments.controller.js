@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('app').controller('CommentsController', function (commentFactory, $routeParams) {
     var self = this;
     self.comments = [];

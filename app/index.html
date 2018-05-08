@@ -8,22 +8,30 @@
 </head>
 
 <body class="container-fluid">
-    <div ng-view class="container-fluid">
+
+    <div ng-view>
     </div>
+
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="app.module.js"></script>
-    <script src="controllers/PostsController.js"></script>
-    <script src="factories/postFactory.js"></script>
-    <script src="controllers/UsersController.js"></script>
-    <script src="factories/userFactory.js"></script>
-    <script src="controllers/CommentsController.js"></script>
-    <script src="factories/commentFactory.js"></script>
-    <script src="components/editableValue.js"></script>
-    <script src="components/post.js"></script>
-    <script src="components/comment.js"></script>
-    <script src="components/homeButton.js"></script>
-    <script src="components/user.js"></script>
+    <script src="app.config.js"></script>
+
+    <script src="posts/posts.controller.js"></script>
+    <script src="posts/post.service.js"></script>
+
+    <script src="users/users.controller.js"></script>
+    <script src="users/user.service.js"></script>
+
+    <script src="comments/comments.controller.js"></script>
+    <script src="comments/comment.service.js"></script>
+
+    <script src="components/comment.directive.js"></script>
+    <script src="components/editableValue.directive.js"></script>
+    <script src="components/homeButton.directive.js"></script>
+    <script src="components/post.directive.js"></script>
+    <script src="components/user.directive.js"></script>
+
 </body>
 
 </html>

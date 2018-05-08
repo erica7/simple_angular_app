@@ -1,6 +1,0 @@
-<span ng-switch="EVC.editMode">
-    <input ng-switch-when="true" ng-model="EVC.value" />
-    <span ng-switch-default>{{ EVC.value }}</span>
-</span>
-
-<button class="btn {{ EVC.editMode ? 'btn-warning' : 'btn-primary' }}" ng-click="EVC.handleModeChange()">{{ EVC.editMode ? 'Save' : 'Edit' }}</button>

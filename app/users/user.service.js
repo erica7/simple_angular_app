@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('app').factory('userFactory', function($http) {
     var factory = {};
     factory.index = function(callback) {
@@ -8,9 +10,6 @@ angular.module('app').factory('userFactory', function($http) {
     }
     factory.update = function(id, user, callback) {
         $http.put('http://jsonplaceholder.typicode.com/users/' + id).then(callback);
-    }
-    factory.getNameViaApi = function(id, callback) {
-        $http.get('http://jsonplaceholder.typicode.com/users/' + id).then(callback);
     }
     return factory;
 });

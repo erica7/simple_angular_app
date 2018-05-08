@@ -1,0 +1,17 @@
+<div class="post">
+    <h4>
+        <a href="#!/posts/{{ PCC.data.id }}">{{ PCC.data.title }}</a>
+    </h4>
+    <div ng-if="PCC.showFullPost">
+        <div class="body">{{ PCC.data.body }}</div>
+        <div class="text-right">
+            <a href="#!/users/{{ PCC.data.userId }}">- {{ PCC.getName()[0].name }}</a>
+        </div>
+
+
+        <div class="text-right" ng-switch="PCC.data.liked">
+            <button ng-switch-default class="btn btn-outline-info" ng-click="PCC.handleChangeLike()"> Like </button>
+            <button ng-switch-when="true" class="btn btn-info" ng-click="PCC.handleChangeLike()"> Liked! </button>
+        </div>
+    </div>
+</div>

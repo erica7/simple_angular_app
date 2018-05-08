@@ -3,7 +3,7 @@
 }
 
 .post {
-    background-color: #eee;
+    background-color: #ddd;
     margin: 2em auto;
     padding: 1em 2em;
     max-width: 36em;
@@ -12,7 +12,7 @@
 }
 
 .comment {
-    background-color: #F8F8F8;
+    background-color: #eee;
     margin: 2em auto;
     padding: 1em 2em;
     max-width: 33em;
@@ -21,7 +21,7 @@
 }
 
 .user {
-    background-color: #E8E8E8;
+    background-color: #ccc;
     margin: 2em auto;
     padding: 1em 2em;
     max-width: 39em;
@@ -44,12 +44,29 @@
     margin: 1em auto;
 }
 
+/* editable-value {
+    display: block;
+    text-align: justify;
+    width: 100%
+}
+
+editable-value > button {
+    margin-right: 0em;
+} */
+
 a, a:link, a:visited, a:active {
-    color: #0894bb;
+    color: #17a2b8;
     text-decoration: none;
 }
 
 a:hover {
-    color: #08c9ff;
+    color: #026977;
     text-decoration: none;
+}
+
+input[type="text"] {
+    border-radius: 0.2em;
+    padding-left: 0.3em;
+    border: none;
+    width: 70%;
 }

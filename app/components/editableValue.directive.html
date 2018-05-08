@@ -1,0 +1,7 @@
+<span ng-switch="EVCC.editMode">
+    <input ng-switch-when="true" type="text" ng-model="EVCC.value" />
+    <span ng-switch-default>{{ EVCC.value }}</span>
+</span>
+
+<button class="btn {{ EVCC.editMode ? 'btn-warning' : 'btn-primary' }}" ng-click="EVCC.handleModeChange()">{{ EVCC.editMode ? 'Save' : 'Edit' }}</button>
+<button ng-if="EVCC.editMode" class="btn btn-danger" ng-click="EVCC.reset()">Reset</button>
