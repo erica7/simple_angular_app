@@ -15,9 +15,10 @@ angular.module('app').component('post', {
 
 function postComponentController() {
     var ctrl = this;
-    ctrl.handleChangeLike = function() {
+    ctrl.handleChangeLike = () => {
         console.log("handleChangeLike");
         console.log("liked?: " + ctrl.data.liked)
-        ctrl.onUpdate({id: ctrl.data.id, liked: !ctrl.data.liked})
+        // ctrl.onUpdate({id: ctrl.data.id, liked: !ctrl.data.liked})
+        ctrl.onUpdate({liked: !ctrl.data.liked})
     }
 }

@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('app').factory('commentFactory', function ($http) {
+angular.module('app').factory('commentFactory', function ($http, apiRootUrl) {
     var factory = {};
-    factory.showPosts = function (id, callback) {
-        $http.get('http://jsonplaceholder.typicode.com/comments?postId=' + id).then(callback);
+    factory.showPosts = (id, successCallback, failureCallback) => {
+        $http.get(apiRootUrl + 'comments?postId=' + id).then(successCallback, failureCallback);
     }
     return factory;
 });

@@ -1,4 +1,8 @@
 <div ng-controller="UsersController as UC" ng-init="PC.index(); UC.index()">
-    <h1 class="text-center">POSTS, IN LATIN!</h1>
-    <post data="post" ng-repeat="post in PC.posts" get-name="UC.getName(post.userId)" on-update="PC.updateLikes(id, liked)" show-full-post="true"></post>
+    <h1 class="display-4 text-center">POSTS, IN LATIN!</h1>
+    <div class="text-center">
+        <div ng-repeat='error in PC.errors'>{{error}}</div>
+        <div ng-repeat='error in UC.errors'>{{error}}</div>
+    </div>
+    <post data="post" ng-repeat="post in PC.posts" get-name="UC.getName(post.userId)" on-update="PC.updateLikes(post.id, liked)" show-full-post="true"></post>
 </div>

@@ -3,6 +3,9 @@
 ## Develop
 Clone the repo locally. Run `npm install`, `bower install`, and `npm start`. Navigate to the address provided by `http-server` (likely `http://127.0.0.1:8081`).
 
+## Description
+This is a AngularJS application run on a simple `http-server`. It works with data from an [API](http://jsonplaceholder.typicode.com/) (some real, and some imaginary) and pretends to update some entires. 
+
 ## Architecture
 All of the application code lives in the `app` directory. The application is organized into folders-by-feature rather than folders-by-type. File names are descriptive of its contents. Controllers, factories, and directives (in this case, components) are named and aliased according to best practices for concise and descriptive naming.
 
@@ -39,7 +42,7 @@ All of the application code lives in the `app` directory. The application is org
 
 Components do not manipulate data directly; rather, components use an output event to send the data to the parent to handle the data and event as desired. 
 
-## Development Proccess, FYI 
+## Development Process, FYI 
 As someone who hasn't used AngularJS in a while, and only in very simple applications, I started where any good dev should start: the documentation. I found the [Developer Guide](https://docs.angularjs.org/guide) to be particularly helpful in providing overviews and examples. I poked through a couple [example](https://github.com/angular/angular-phonecat) [repos](https://github.com/angular/angular-seed) as well. 
 
 A styleguide and best practices for AngularJS are wonderfully organized and summarized [here](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md).

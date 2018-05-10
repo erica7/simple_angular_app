@@ -13,17 +13,17 @@ angular.module('app').component('editableValue', {
 function editableValueComponentController() {
     var ctrl = this;
     ctrl.editMode = false;
-    ctrl.handleModeChange = function () {
+    ctrl.handleModeChange = () => {
         if (ctrl.editMode) {
             ctrl.onUpdate({ value: ctrl.value });
             ctrl.valueCopy = ctrl.value;
         }
         ctrl.editMode = !ctrl.editMode;
     }
-    ctrl.reset = function() {
+    ctrl.reset = () => {
         ctrl.value = ctrl.valueCopy;
     }
-    ctrl.$onInit = function () {
+    ctrl.$onInit = () => {
         ctrl.valueCopy = ctrl.value;
     }
 }

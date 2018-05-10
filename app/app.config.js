@@ -5,7 +5,12 @@ angular.module('app').config(['$routeProvider',
         $routeProvider.
             when('/', {
                 templateUrl: '/posts/index.html',
-                controller: 'PostsController as PC'
+                controller: 'PostsController as PC', 
+                // resolve: {
+                //     posts: (postFactory) => {
+                //         return postFactory.index();
+                //     }
+                // }
             }).
             when('/users/:id', {
                 templateUrl: '/users/user.html',

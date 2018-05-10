@@ -3,11 +3,10 @@
 angular.module('app').controller('CommentsController', function (commentFactory, $routeParams) {
     var self = this;
     self.comments = [];
-    self.showPosts = function () {
-        commentFactory.showPosts($routeParams.id, function (res) {
+    self.showPosts = () => {
+        commentFactory.showPosts($routeParams.id, (res) => {
             if (res.data.errors) {
-                //for(let key of Object.keys(res.data.errors))
-                for (key in res.data.errors) {
+                for (let key of Object.keys(res.data.errors)) {
                     var error = res.data.errors[key];
                     console.log(error)
                     self.errors.push(error);
@@ -15,8 +14,12 @@ angular.module('app').controller('CommentsController', function (commentFactory,
             } else {
                 self.comments = res.data;
             }
-        })
+        }, (res) => this.onFailure(res))
+    }
+    self.onFailure = (res) => {
+        console.log(res.status + " - " + res.statusText);
+        self.errors.push(res.status + " - " + res.statusText);
     }
 });
 
-//TODO consider using 'posts/:id/comments' instead 
+//TODO alternative: use 'posts/:id/comments' service instead; relocate logic to Posts Controller

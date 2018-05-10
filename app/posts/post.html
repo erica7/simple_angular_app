@@ -1,8 +1,15 @@
 <div ng-controller="CommentsController as CC">
     <div ng-controller="UsersController as UC" ng-init="PC.show(); CC.showPosts(); UC.index()">
         <home-button></home-button>
-        <post data="PC.post" get-name="UC.getName(PC.post.userId)" on-update="PC.updateLikes(id, liked)" show-full-post="true"></post>
-        <h5 ng-if="CC.comments" class="text-center"><em>comments</em></h5>
+        <div class="text-center">
+            <div ng-repeat='error in PC.errors'>{{error}}</div>
+            <div ng-repeat='error in UC.errors'>{{error}}</div>
+            <div ng-repeat='error in CC.errors'>{{error}}</div>
+        </div>
+        <post data="PC.post" get-name="UC.getName(PC.post.userId)" on-update="PC.updateLikes(PC.post.id, liked)" show-full-post="true"></post>
+        <h5 ng-if="CC.comments" class="text-center">
+            <em>comments</em>
+        </h5>
         <comment data="comment" ng-repeat="comment in CC.comments"></comment>
     </div>
 </div>

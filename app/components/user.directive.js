@@ -14,7 +14,7 @@ angular.module('app').component('user', {
 
 function userComponentController() {
     var ctrl = this;
-    ctrl.update = function (field, value) {
+    ctrl.update = (field, value) => {
         ctrl.onUpdate({ field: field, value: value });
     }
 }

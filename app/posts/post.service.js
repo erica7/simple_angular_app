@@ -1,18 +1,19 @@
 'use strict';
 
-angular.module('app').factory('postFactory', function ($http) {
+angular.module('app').factory('postFactory', function ($http, apiRootUrl) {
     var factory = {};
-    factory.index = function (callback) {
-        $http.get('http://jsonplaceholder.typicode.com/posts').then(callback);
+    factory.index = (successCallback, failureCallback) => {
+        $http.get(apiRootUrl + 'posts').then(successCallback, failureCallback);
+        // return $http.get(apiRootUrl + 'posts')//.then(successCallback, failureCallback);
     }
-    factory.show = function (id, callback) {
-        $http.get('http://jsonplaceholder.typicode.com/posts/' + id).then(callback);
+    factory.show = (id, successCallback, failureCallback) => {
+        $http.get(apiRootUrl + 'posts/' + id).then(successCallback, failureCallback);
     }
-    factory.showUsers = function (id, callback) {
-        $http.get('http://jsonplaceholder.typicode.com/posts?userId=' + id).then(callback);
+    factory.showUsers = (id, successCallback, failureCallback) => {
+        $http.get(apiRootUrl + 'posts?userId=' + id).then(successCallback, failureCallback);
     }
-    factory.update = function(id, post, callback) {
-        $http.put('http://jsonplaceholder.typicode.com/posts/' + id).then(callback);
+    factory.update = (id, post, successCallback, failureCallback) => {
+        $http.put(apiRootUrl + 'posts/' + id, post).then(successCallback, failureCallback);
     }
     return factory;
 });

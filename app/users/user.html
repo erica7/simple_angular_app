@@ -1,10 +1,12 @@
-<div ng-init="UC.show()">
+<div ng-controller="PostsController as PC" ng-init="UC.show(); PC.showUsers()">
     <home-button></home-button>
-    <user data="UC.user" on-update="UC.update(field, value)"></user>
-    <div ng-controller="PostsController as PC" ng-init="PC.showUsers()">
-        <h5 ng-if="PC.posts" class="text-center">
-            <em>posts</em>
-        </h5>
-        <post data="post" ng-repeat="post in PC.posts" full-post="false"></post>
+    <div class="text-center">
+        <div ng-repeat='error in PC.errors'>{{error}}</div>
+        <div ng-repeat='error in UC.errors'>{{error}}</div>
     </div>
+    <user data="UC.user" on-update="UC.update(field, value)"></user>
+    <h5 ng-if="PC.posts" class="text-center">
+        <em>posts</em>
+    </h5>
+    <post data="post" ng-repeat="post in PC.posts" full-post="false"></post>
 </div>

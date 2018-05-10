@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('app').factory('userFactory', function($http) {
+angular.module('app').factory('userFactory', function ($http, apiRootUrl) {
     var factory = {};
-    factory.index = function(callback) {
-        $http.get('http://jsonplaceholder.typicode.com/users').then(callback);
+    factory.index = (successCallback, failureCallback) => {
+        $http.get(apiRootUrl + 'users').then(successCallback, failureCallback);
     }
-    factory.show = function(id, callback) {
-        $http.get('http://jsonplaceholder.typicode.com/users/' + id).then(callback);
+    factory.show = (id, successCallback, failureCallback) => {
+        $http.get(apiRootUrl + 'users/' + id).then(successCallback, failureCallback);
     }
-    factory.update = function(id, user, callback) {
-        $http.put('http://jsonplaceholder.typicode.com/users/' + id).then(callback);
+    factory.update = (id, user, successCallback, failureCallback) => {
+        $http.put(apiRootUrl + 'users/' + id, user).then(successCallback, failureCallback);
     }
     return factory;
 });
