@@ -6,7 +6,7 @@
             <div ng-repeat='error in UC.errors'>{{error}}</div>
             <div ng-repeat='error in CC.errors'>{{error}}</div>
         </div>
-        <post data="PC.post" get-name="UC.getName(PC.post.userId)" on-update="PC.updateLikes(PC.post.id, liked)" show-full-post="true"></post>
+        <post data="PC.post" get-name="UC.getName(PC.post.userId)" show-full-post="true"></post>
         <h5 ng-if="CC.comments" class="text-center">
             <em>comments</em>
         </h5>

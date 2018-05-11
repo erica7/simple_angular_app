@@ -11,18 +11,14 @@ angular.module('app').controller('UsersController', function (userFactory, $rout
             .then((res) => {
                 self.users = res.data;
             })
-            .catch((err) => {
-                self.onFailure(err)
-            })
+            .catch(self.onFailure)
     }
     self.show = () => {
         userFactory.show($routeParams.id)
             .then((res) => {
                 self.user = res.data;
             })
-            .catch((err) => {
-                self.onFailure(err)
-            })
+            .catch(self.onFailure)
     }
     self.getName = (userId) => {
         return self.users.filter((user) => { return user.id === userId });
@@ -34,12 +30,10 @@ angular.module('app').controller('UsersController', function (userFactory, $rout
                 console.log("success: ", res);
                 self.user = res.data;
             })
-            .catch((err) => {
-                self.onFailure(err);
-            })
+            .catch(self.onFailure)
     }
-    self.onFailure = (res) => {
+    self.onFailure = (err) => {
         console.log("error: ", err);
-        self.errors.push(res.status + " - " + res.statusText);
+        self.errors.push(err.status + " - " + err.statusText);
     }
 });

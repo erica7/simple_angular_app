@@ -10,27 +10,21 @@ angular.module('app').controller('PostsController', function ($routeParams, post
             .then((res) => {
                 self.posts = res.data;
             })
-            .catch((err) => {
-                self.onFailure(err)
-            })
+            .catch(self.onFailure)
     }
     self.show = () => {
         postFactory.show($routeParams.id)
             .then((res) => {
                 self.post = res.data;
             })
-            .catch((err) => {
-                self.onFailure(err)
-            })
+            .catch(self.onFailure)
     }
     self.showUsers = () => {
         postFactory.showUsers($routeParams.id)
             .then((res) => {
                 self.posts = res.data;
             })
-            .catch((err) => {
-                self.onFailure(err)
-            })
+            .catch(self.onFailure)
     }
     self.getPost = (id) => {
         postFactory.show(id)
@@ -38,9 +32,7 @@ angular.module('app').controller('PostsController', function ($routeParams, post
                 console.log("success: ", res)
                 self.post = res.data;
             })
-            .catch((err) => {
-                self.onFailure(err)
-            })
+            .catch(self.onFailure)
     }
     self.onFailure = (err) => {
         console.log("error: ", err);

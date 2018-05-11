@@ -4,7 +4,7 @@
 Clone the repo locally. Run `npm install`, `bower install`, and `npm start`. Navigate to the address provided by `http-server` (likely `http://127.0.0.1:8081`).
 
 ## Description
-This is an AngularJS application run on a simple `http-server` to handle AngularJS's requests (specifically, `$http`). It works with data from an [API](http://jsonplaceholder.typicode.com/) (some real, and some imaginary such as post like status) and pretends to update some entries. The post like data is assumed to be a boolean, as in a user has liked or not liked a post. Simple error messages are displayed to the user (which are really just placeholders now and should be improved significantly before release). The routes are RESTful:
+This is an AngularJS application run on a simple `http-server` to handle AngularJS's requests (specifically, `$http`). It works with data from an [API](http://jsonplaceholder.typicode.com/) (some real, and some imaginary such as post like status) and pretends to update some entries. The 'imaginary' post like status is treated as a boolean, as in a user has liked or not liked a post. Simple error messages are displayed to the user (which are really just placeholders now and should be improved significantly before release). The routes are RESTful:
 
 - `/` is the index page showing all posts 
 - `/posts/:id` shows post details  
@@ -15,7 +15,7 @@ Simple responsive web design was implemented with [Bootstrap](https://getbootstr
 ## Architecture
 The application code lives in the `app` directory. The code is organized into folders-by-feature rather than folders-by-type. The features are posts (which houses the index partial as well as the post details partial), users, and comments. Additionally, a components folder houses all of the components used throughout the app. 
 
-Components rely on external controllers and services to manipulate data. They use output events to send the data to the parent view & controller via their own controllers, or they access services directly via dependency injection. File names are descriptive of its contents. 
+Components rely on external controllers and services to manipulate data. They use output events to send the data to the parent view & controller via their own controllers, or they access services directly via dependency injection. File names are descriptive of their contents. 
 
 Controllers, factories, and directives (in this case, components) are given concise and descriptive names and aliases.
 
@@ -59,4 +59,4 @@ A styleguide and best practices for AngularJS are wonderfully organized and summ
 
 I also looked into making AngularJS more Angular-y (Angular 2/4/5/6, that is) by using components. Taking it a step further, one could eliminate the view controllers such that an app consists entirely of components and their associated controllers, plus services, factories, other directives, etc. I found some insightful [articles](https://toddmotto.com/rewriting-angular-styleguide-angular-2) and [styleguides](https://github.com/toddmotto/angularjs-styleguide) that make AngularJS more Angular-y and could be helpful in transitioning to the new Angular. 
 
-This app uses promises for asynchronous behavior. Factory services return a promise that is dealt with in the controller or component controller. (See the post component controller, which updates post likes directly with the post factory via dependency injection.) 
+This app uses promises for asynchronous behavior. Factory services return a promise that is dealt with in the controller or component controller. (See the post component controller, which updates post likes directly with the post factory via dependency injection.) Using resolves in the route provider would make for a better user experience; the user would only move to the requested view after the data has been retrieved. 

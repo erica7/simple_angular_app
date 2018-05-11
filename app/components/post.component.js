@@ -8,8 +8,7 @@ angular.module('app').component('post', {
         data: "<",
         name: "<",
         showFullPost: "<",
-        getName: "&",
-        onUpdate: "&"
+        getName: "&"
     }
 })
 
@@ -18,7 +17,7 @@ function postComponentController(postFactory) {
     var ctrl = this;
     ctrl.handleChangeLike = () => {
         ctrl.data.liked = !ctrl.data.liked ? true : false;
-        postFactory.updateLikes(ctrl.data.id, ctrl.data)
+        postFactory.update(ctrl.data.id, ctrl.data)
             .then((res) => {
                 console.log("success: ", res);
                 // When the update is successful, the local data-model is updated with the response (the updated post object)

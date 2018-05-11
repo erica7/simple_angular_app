@@ -3,18 +3,17 @@
 angular.module('app').controller('CommentsController', function (commentFactory, $routeParams) {
     var self = this;
     self.comments = [];
+    self.errors = [];
     self.show = () => {
         commentFactory.show($routeParams.id)
             .then((res) => {
                 self.comments = res.data;
             })
-            .catch((err) => {
-                self.onFailure(err)
-            })
+            .catch(self.onFailure)
     }
-    self.onFailure = (res) => {
+    self.onFailure = (err) => {
         console.log("error: ", err);
-        self.errors.push(res.status + " - " + res.statusText);
+        self.errors.push(err.status + " - " + err.statusText);
     }
 });
 

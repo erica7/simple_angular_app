@@ -11,10 +11,7 @@ angular.module('app').factory('postFactory', function ($http, apiRootUrl) {
     factory.showUsers = (id) => {
         return $http.get(apiRootUrl + 'posts?userId=' + id);
     }
-    // factory.update = (id, post) => {
-    //     return $http.put(apiRootUrl + 'posts/' + id, JSON.stringify(post));
-    // }
-    factory.updateLikes = (id, post) => {
+    factory.update = (id, post) => {
         return $http.put(apiRootUrl + 'posts/' + id, post);
     }
     return factory;

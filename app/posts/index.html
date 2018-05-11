@@ -4,5 +4,5 @@
         <div ng-repeat='error in PC.errors'>{{error}}</div>
         <div ng-repeat='error in UC.errors'>{{error}}</div>
     </div>
-    <post data="post" ng-repeat="post in PC.posts track by post.id" get-name="UC.getName(post.userId)" on-update="PC.updateLikes(post.id, liked)" show-full-post="true"></post>
+    <post data="post" ng-repeat="post in PC.posts track by post.id" get-name="UC.getName(post.userId)" show-full-post="true"></post>
 </div>
