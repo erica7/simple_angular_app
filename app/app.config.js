@@ -8,13 +8,13 @@ angular.module('app').config(['$routeProvider',
                 controller: 'PostsController as PC', 
                 // resolve: {
                 //     posts: (postFactory) => {
-                //         return postFactory.index();
+                //         return postFactory.index().then((res)=>{return res.data});
                 //     }
                 // }
             }).
             when('/users/:id', {
                 templateUrl: '/users/user.html',
-                controller: 'UsersController as UC'
+                controller: 'UsersController as UC',
             }).
             when('/posts/:id', {
                 templateUrl: '/posts/post.html',

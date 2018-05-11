@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app').component('user', {
-    templateUrl: '/components/user.directive.html',
+    templateUrl: '/components/user.component.html',
     controller: userComponentController,
     controllerAs: 'UCC',
     bindings: {

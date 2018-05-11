@@ -1,5 +1,5 @@
 <div ng-controller="CommentsController as CC">
-    <div ng-controller="UsersController as UC" ng-init="PC.show(); CC.showPosts(); UC.index()">
+    <div ng-controller="UsersController as UC" ng-init="PC.show(); CC.show(); UC.index()">
         <home-button></home-button>
         <div class="text-center">
             <div ng-repeat='error in PC.errors'>{{error}}</div>

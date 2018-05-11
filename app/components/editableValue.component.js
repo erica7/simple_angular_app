@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app').component('editableValue', {
-    templateUrl: '/components/editableValue.directive.html',
+    templateUrl: '/components/editableValue.component.html',
     controller: editableValueComponentController,
     controllerAs: 'EVCC',
     bindings: {
