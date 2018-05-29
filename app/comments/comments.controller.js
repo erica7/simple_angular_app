@@ -4,13 +4,23 @@ angular.module('app').controller('CommentsController', function (commentFactory,
     var self = this;
     self.comments = [];
     self.errors = [];
+
     self.show = () => {
-        commentFactory.show($routeParams.id)
-            .then((res) => {
-                self.comments = res.data;
+        commentFactory.getSomeComments($routeParams.id)
+            .then(() => {
+                self.comments = commentFactory.comments;
             })
-            .catch(self.onFailure)
+            .catch(self.onFailure);
     }
+
+
+    // self.show = () => {
+    //     commentFactory.show($routeParams.id)
+    //         .then((res) => {
+    //             self.comments = res.data;
+    //         })
+    //         .catch(self.onFailure)
+    // }
     self.onFailure = (err) => {
         console.log("error: ", err);
         self.errors.push(err.status + " - " + err.statusText);

@@ -6,20 +6,38 @@ angular.module('app').controller('UsersController', function (userFactory, $rout
     self.posts = [];
     self.user = {};
     self.users = [];
+
     self.index = () => {
         userFactory.index()
-            .then((res) => {
-                self.users = res.data;
+            .then(() => {
+                self.users = userFactory.users;
             })
-            .catch(self.onFailure)
+            .catch(self.onFailure);
     }
-    self.show = () => {
+    self.show = () => { 
         userFactory.show($routeParams.id)
-            .then((res) => {
-                self.user = res.data;
+            .then(() => {
+                self.user = userFactory.user;
+                console.log("self.user: ", self.user);
             })
-            .catch(self.onFailure)
+            .catch(self.onFailure);
     }
+
+
+    // self.index = () => {
+    //     userFactory.index()
+    //         .then((res) => {
+    //             self.users = res.data;
+    //         })
+    //         .catch(self.onFailure)
+    // }
+    // self.show = () => {
+    //     userFactory.show($routeParams.id)
+    //         .then((res) => {
+    //             self.user = res.data;
+    //         })
+    //         .catch(self.onFailure)
+    // }
     self.getName = (userId) => {
         return self.users.filter((user) => { return user.id === userId });
     }

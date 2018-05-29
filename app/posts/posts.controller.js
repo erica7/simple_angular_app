@@ -5,20 +5,38 @@ angular.module('app').controller('PostsController', function ($routeParams, post
     self.errors = [];
     self.post = {};
     self.posts = [];
+    // self.f_posts = postFactory.posts;
+    // self.f_post = postFactory.post;
+
     self.index = () => {
         postFactory.index()
-            .then((res) => {
-                self.posts = res.data;
+            .then(() => {
+                self.posts = postFactory.posts;
             })
-            .catch(self.onFailure)
+            .catch(self.onFailure);
     }
     self.show = () => {
         postFactory.show($routeParams.id)
-            .then((res) => {
-                self.post = res.data;
+            .then(() => {
+                self.post = postFactory.post;
             })
-            .catch(self.onFailure)
+            .catch(self.onFailure);
     }
+
+    // self.index = () => {
+    //     postFactory.index()
+    //         .then((res) => {
+    //             self.posts = res.data;
+    //         })
+    //         .catch(self.onFailure)
+    // }
+    // self.show = () => {
+    //     postFactory.show($routeParams.id)
+    //         .then((res) => {
+    //             self.post = res.data;
+    //         })
+    //         .catch(self.onFailure)
+    // }
     self.showUsers = () => {
         postFactory.showUsers($routeParams.id)
             .then((res) => {
